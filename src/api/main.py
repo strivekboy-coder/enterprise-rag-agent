@@ -12,12 +12,9 @@ app = FastAPI(title='enterprise-rag-agent')
 def health():
     return {'status': 'ok'}
 
-@app.get('/user')
-def user():
-    return {'name': 'V', 'age': 24, 'hobby': 'coding'}   
 
 
-@app.post("/v1/chat")
+@app.post("/chat")
 def chat(request: ChatRequest):
     history = request.history if request.history else []
     return {
