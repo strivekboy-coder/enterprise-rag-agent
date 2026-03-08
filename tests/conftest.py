@@ -9,6 +9,7 @@ sys.path.insert(0, str(ROOT))
 
 from src.api.main import app  # noqa: E402
 
+
 @pytest.fixture()
 def client():
     return TestClient(app)
